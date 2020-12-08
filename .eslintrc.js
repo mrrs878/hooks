@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-07 19:14:46
- * @LastEditTime: 2020-12-08 16:54:47
+ * @LastEditTime: 2020-12-08 22:19:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\.eslintrc.js
@@ -17,7 +17,8 @@ module.exports = {
   ],
   plugins: ['@typescript-eslint', 'react-hooks'],
   parserOptions: {
-    project: './tsconfig.json'
+    project: './tsconfig.json',
+    ecmaVersion: 11
   },
   env: {
     node: true,
