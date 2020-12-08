@@ -1,29 +1,24 @@
 /*
  * @Author: your name
  * @Date: 2020-12-07 19:14:46
- * @LastEditTime: 2020-12-08 11:05:25
+ * @LastEditTime: 2020-12-08 16:54:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\.eslintrc.js
  */
 module.exports = {
-  parserOptions: {
-    sourceType: "module",
-    createDefaultProgram: true,
-    ecmaVersion: 11,
-    experimentalObjectRestSpread: true,
-    ecmaFeatures: {
-      jsx: true,
-    },
-    parser: "babel-eslint",
+  root: true,
+  env: {
+    node: true,
+    jest: true,
   },
-  plugins: [
-    "react-hooks",
-  ],
   extends: [
-    "airbnb-base",
-    "eslint:recommended",
+    'airbnb-typescript'
   ],
+  plugins: ['@typescript-eslint', 'react-hooks'],
+  parserOptions: {
+    project: './tsconfig.json'
+  },
   env: {
     node: true,
     browser: true,
@@ -37,10 +32,10 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "consistent-return": "off",
     "camelcase": "off",
-    "quotes": ["error", "double"],
     "max-len": ["error", { code: 300 }],
     "no-bitwise": "off",
     "indent": ["error", 2],
     "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off"
   },
 };
