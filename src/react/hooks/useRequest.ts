@@ -1,24 +1,33 @@
 /*
- * @Author: your name
+ * @Author: mrrs878
  * @Date: 2020-12-08 22:50:25
- * @LastEditTime: 2020-12-08 22:57:47
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @LastEditTime: 2020-12-09 16:15:15
+ * @LastEditors: mrrs878
+ * @Description: useRequest hook
  * @FilePath: \jsLibrary\src\react\hooks\useRequest.ts
  */
 import { useEffect, useState, useCallback } from 'react';
 
-function useRequest<P, T>(api: (params: P) => Promise<T>, params?: P, visible = true) :[boolean, T|undefined, (params?: P) => void, () => void] {
+/**
+ * @param api 发送请求的函数
+ * @param visible 是否自动触发
+ * @param params 请求的参数
+ * @returns 是否在请求中
+ * @returns 接口返回值
+ * @returns 手动发送请求
+ * @returns 重新发送请求(使用上一次的参数)
+*/
+function useRequest<P, T>(api: (params: P) => Promise<T>, visible = true, params?: P)
+  : [boolean, T|undefined, (params?: P) => void, () => void] {
   const [res, setRes] = useState<T>();
   const [loading, setLoading] = useState(() => false);
   const [newParams, setNewParams] = useState(() => params);
   const [autoFetch, setAutoFetch] = useState(() => visible);
 
   const fetch = useCallback(async () => {
-    if (!newParams && autoFetch === false) return;
     if (autoFetch) {
-      const newNewParams = (newParams || {}) as P;
       setLoading(true);
+      const newNewParams = (newParams || {}) as P;
       const tmp = await api(newNewParams);
       setRes(tmp);
       setLoading(false);
