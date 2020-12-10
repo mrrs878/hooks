@@ -9,7 +9,4 @@
 import Chain, { NEXT_SUCCESSOR } from './Chain';
 import { before, after } from './aop';
 import PublishSubscribe from './PublishSubscribe';
-
-export {
-  Chain, before, after, PublishSubscribe, NEXT_SUCCESSOR,
-};
+export { Chain, before, after, PublishSubscribe, NEXT_SUCCESSOR, };

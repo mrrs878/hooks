@@ -10,7 +10,6 @@ import useDocumentTitle from './useDocumentTitle';
 import useInputValue from './useInputValue';
 import useRequest from './useRequest';
 import useWindowScroll from './useWindowScroll';
-
 export default {
-  useDocumentTitle, useInputValue, useRequest, useWindowScroll,
+    useDocumentTitle: useDocumentTitle, useInputValue: useInputValue, useRequest: useRequest, useWindowScroll: useWindowScroll,
 };

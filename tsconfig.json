@@ -18,7 +18,7 @@
     "isolatedModules": true,
     "jsx": "react",
     "declaration": true,
-    "outDir": "dist-commonjs",
+    "declarationDir": "dist",
     "types": [
       "webpack-env",
       "node",
