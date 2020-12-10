@@ -28,4 +28,21 @@ yarn-error.log*
 
 *.filelock.*
 
-/dist*
+.github
+
+.*
+
+.github
+
+/src
+
+.eslintrc.js
+.eslintignore
+.gitignore
+babel.config.js
+jest.config.js
+setupTests.js
+tsconfig.json
+webpack.config.js
+
+/test

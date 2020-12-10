@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 22:55:06
- * @LastEditTime: 2020-12-09 23:12:41
+ * @LastEditTime: 2020-12-10 10:05:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\src\native\PublishSubscribe.ts
@@ -24,7 +24,7 @@ const PublishSubscribe: PublishSubscribeI = {
   on(event: string, handler: Function) {
     if (this.events[event]) {
       if (this.events[event].length >= this.maxWatchers) {
-        console.error(`${event} watchers too much`);
+        console.error(`too much ${event} watchers`);
         return;
       }
       this.events[event].push(handler);
