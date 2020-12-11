@@ -10,9 +10,6 @@
 # testing
 /coverage
 
-# production
-/dist
-
 # misc
 .DS_Store
 .env.local
@@ -44,5 +41,6 @@ jest.config.js
 setupTests.js
 tsconfig.json
 webpack.config.js
+rollup.config.js
 
 /test
