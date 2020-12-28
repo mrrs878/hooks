@@ -1,12 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2020-12-23 17:52:01
- * @LastEditTime: 2020-12-23 19:12:37
+ * @LastEditTime: 2020-12-24 10:19:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /jsLibrary/src/react/useDrop.ts
  */
-import { useMemo } from 'react';
+import {
+  useCallback, useMemo, useRef, useState,
+} from 'react';
 
 interface DropAreaState {
   isHovering: boolean;
@@ -23,4 +25,77 @@ interface DropProps {
 interface DropAreaOptions {
   onFiles?: (file: Array<File>, event?: React.DragEvent) => void;
   onUri?: (url: string, event?: React.DragEvent) => void;
+  onDom?: (content: any, event?: React.DragEvent) => void;
+  onText?: (text: string, event?: React.ClipboardEvent) => void;
 }
+
+const getProps = (
+  callback: (dataTransfer: DataTransfer, event: React.DragEvent | React.ClipboardEvent) => void,
+  setIsHovering: (over: boolean) => void,
+): DropProps => ({
+  onDragOver: (event: React.DragEvent) => event.preventDefault(),
+  onDragenter: (event: React.DragEvent) => {
+    event.preventDefault();
+    setIsHovering(true);
+  },
+  onDragLeave: () => setIsHovering(false),
+  onDrop: (event: React.DragEvent) => {
+    event.preventDefault();
+    event.persist();
+    setIsHovering(false);
+    callback(event.dataTransfer, event);
+  },
+  onPaste: (event: React.ClipboardEvent) => {
+    event.persist();
+    callback(event.clipboardData, event);
+  },
+});
+
+const useDrop = (options: DropAreaOptions = {}): [DropProps, DropAreaState] => {
+  const optionsRef = useRef(options);
+  optionsRef.current = options;
+  const [isHovering, setIsHovering] = useState(false);
+  const callback = useCallback(
+    (dataTransfer: DataTransfer, event: React.DragEvent | React.ClipboardEvent) => {
+      const uri = dataTransfer.getData('text/uri-list');
+      const dom = dataTransfer.getData('custom');
+
+      if (dom && optionsRef.current.onDom) {
+        let data = dom;
+        try {
+          data = JSON.parse(dom);
+        } catch (e) {
+          data = dom;
+        }
+        optionsRef.current.onDom(data, event as React.DragEvent);
+        return;
+      }
+
+      if (uri && optionsRef.current.onUri) {
+        optionsRef.current.onUri(uri, event as React.DragEvent);
+        return;
+      }
+
+      if (dataTransfer.files && dataTransfer.files.length && optionsRef.current.onFiles) {
+        optionsRef.current.onFiles(Array.from(dataTransfer.files), event as React.DragEvent);
+        return;
+      }
+
+      if (dataTransfer.items && dataTransfer.items.length && optionsRef.current.onText) {
+        dataTransfer.items[0].getAsString((text) => {
+          optionsRef.current.onText!(text, event as React.ClipboardEvent);
+        });
+      }
+    },
+    [],
+  );
+
+  const props: DropProps = useMemo(() => getProps(callback, setIsHovering), [
+    callback,
+    setIsHovering,
+  ]);
+
+  return [props, { isHovering }];
+};
+
+export default useDrop;
