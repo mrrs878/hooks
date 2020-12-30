@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-21 18:56:37
- * @LastEditTime: 2020-12-21 22:40:33
+ * @LastEditTime: 2020-12-29 22:41:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\test\useDebounce.test.tsx
@@ -9,7 +9,6 @@
 import { renderHook,act } from '@testing-library/react-hooks';
 import { sleep } from '../src/tools';
 import useDebounce from '../src/react/useDebounce';
-import { debounce } from 'lodash';
 
 describe('test useDebounce', () => {
   const fn = (param: number) => param + 1;

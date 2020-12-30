@@ -1,3 +1,12 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-15 23:23:11
+ * @LastEditTime: 2020-12-29 22:44:32
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \jsLibrary\README.md
+-->
+
 # jsLibrary
 
 ![Node.js CI](https://github.com/mrrs878/jsLibrary/workflows/Node.js%20CI/badge.svg)
@@ -23,3 +32,19 @@
 - useInputValue.js，`input`双向绑定
 
 - useWindowScroll.js，`window.scroll`事件发生时执行目标函数
+
+## 单元测试
+
+```js
+describe('xxx', () => {
+  // 测试函数是否定义
+  it('should be defined', () => {
+    expect(xxx).toBeDefined();
+  });
+  // 测试函数是否被调用
+  it('should be called', () => {
+    expect(xxx).toBeCalled();
+  });
+
+});
+```
