@@ -1,8 +1,8 @@
 <!--
- * @Author: your name
+ * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-15 23:23:11
  * @LastEditTime: 2020-12-29 22:44:32
- * @LastEditors: your name
+ * @LastEditors: mrrs878@foxmail.com
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\README.md
 -->
