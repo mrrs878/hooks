@@ -1,12 +1,12 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2021-01-05 22:47:57
- * @LastEditTime: 2021-01-05 23:21:52
+ * @LastEditTime: 2021-01-06 22:54:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\test\useHover.test.ts
  */
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import { fireEvent } from '@testing-library/react';
 import useHover from '../src/react/useHover';
 
@@ -27,7 +27,7 @@ describe('test usHover', () => {
     document.body.removeChild(target);
   })
 
-  it('hover', async () => {
+  it('hover', () => {
     const { unmount } = renderHook(() => useHover(target, {
       onEnter() {
         target.innerText = 'enter'
@@ -38,13 +38,19 @@ describe('test usHover', () => {
     }));
 
     expect(target.innerText).toEqual('');
-    fireEvent.mouseEnter(target);
+    act(() => {
+      fireEvent.mouseEnter(target);
+    })
     expect(target.innerText).toEqual('enter');
-    fireEvent.mouseLeave(target);
+    act(() => {
+      fireEvent.mouseLeave(target);
+    })
     expect(target.innerText).toEqual('leave');
 
     unmount();
-    fireEvent.mouseEnter(target);
+    act(() => {
+      fireEvent.mouseEnter(target);
+    })
     expect(target.innerText).toEqual('leave');
   })
 })
