@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-06 18:43:31
- * @LastEditTime: 2021-01-06 18:59:51
+ * @LastEditTime: 2021-01-07 23:28:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /jsLibrary/src/react/useFullScreen.ts
@@ -66,7 +66,7 @@ function useFullScreen(target: BasicTarget, options?: OptionsI) {
     if (screenfull.isEnabled) screenfull.off('change', onChange);
   }, [onChange]);
 
-  return [state, { setFull, exitFull, toggleFull }];
+  return [state, { setFull, exitFull, toggleFull }, screenfull.isEnabled] as const;
 }
 
 export default useFullScreen;
