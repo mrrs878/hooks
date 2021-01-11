@@ -25,32 +25,32 @@ describe('test usHover', () => {
 
   afterEach(() => {
     document.body.removeChild(target);
-  })
+  });
 
   it('hover', () => {
     const { unmount } = renderHook(() => useHover(target, {
       onEnter() {
-        target.innerText = 'enter'
+        target.innerText = 'enter';
       },
       onLeave() {
-        target.innerText = 'leave'
+        target.innerText = 'leave';
       },
     }));
 
     expect(target.innerText).toEqual('');
     act(() => {
       fireEvent.mouseEnter(target);
-    })
+    });
     expect(target.innerText).toEqual('enter');
     act(() => {
       fireEvent.mouseLeave(target);
-    })
+    });
     expect(target.innerText).toEqual('leave');
 
     unmount();
     act(() => {
       fireEvent.mouseEnter(target);
-    })
+    });
     expect(target.innerText).toEqual('leave');
-  })
-})
+  });
+});

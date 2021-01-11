@@ -1,7 +1,7 @@
 /*
- * @Author: mrrs878@foxmail.com
- * @Date: 2020-12-07 23:09:08
- * @LastEditTime: 2020-12-08 10:33:59
+ * @Author: your name
+ * @Date: 2020-12-15 23:23:11
+ * @LastEditTime: 2021-01-11 22:50:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\babel.config.js

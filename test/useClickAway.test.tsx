@@ -1,7 +1,7 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2021-01-04 22:12:19
- * @LastEditTime: 2021-01-04 22:41:14
+ * @LastEditTime: 2021-01-11 22:49:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\test\useClickAway.test.ts
@@ -13,7 +13,7 @@ import useClickAway from '../src/react/useClickAway';
 describe('test useClickAway', () => {
   it('should be defined', () => {
     expect(useClickAway).toBeDefined();
-  })
+  });
 
   let container: HTMLDivElement;
   let container1: HTMLDivElement;
@@ -33,14 +33,12 @@ describe('test useClickAway', () => {
 
   it('test on dom optional', async () => {
     let state = 0;
-    const { rerender, unmount } = renderHook((dom: any) =>
-      useClickAway(() => {
-        state += 1;
-      }, dom),
-    );
+    const { rerender, unmount } = renderHook((dom: any) => useClickAway(() => {
+      state += 1;
+    }, dom));
 
     rerender(() => container);
-    fireEvent.click(container)
+    fireEvent.click(container);
     expect(state).toEqual(0);
     fireEvent.click(document.body);
     expect(state).toEqual(1);
@@ -59,22 +57,20 @@ describe('test useClickAway', () => {
   it('should works on multiple target', async () => {
     let state = 0;
 
-    const { rerender, unmount } = renderHook((dom: any) => 
-      useClickAway(() => {
-        state += 1;
-      }, dom),
-    );
+    const { rerender, unmount } = renderHook((dom: any) => useClickAway(() => {
+      state += 1;
+    }, dom));
 
-      rerender([container, container1]);
-      fireEvent.click(container);
-      expect(state).toEqual(0);
-      fireEvent.click(container1);
-      expect(state).toEqual(0);
-      fireEvent.click(document.body);
-      expect(state).toEqual(1);
+    rerender([container, container1]);
+    fireEvent.click(container);
+    expect(state).toEqual(0);
+    fireEvent.click(container1);
+    expect(state).toEqual(0);
+    fireEvent.click(document.body);
+    expect(state).toEqual(1);
 
-      unmount();
-      fireEvent.click(document.body);
-      expect(state).toEqual(1);
-  })
-})
+    unmount();
+    fireEvent.click(document.body);
+    expect(state).toEqual(1);
+  });
+});

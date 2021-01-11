@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-09 22:41:26
- * @LastEditTime: 2021-01-09 22:53:40
+ * @LastEditTime: 2021-01-11 22:49:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\test\useFocus.test.ts
@@ -53,6 +53,5 @@ describe('test useFocus', () => {
     });
     expect(onFocus).toBeCalledTimes(1);
     expect(result.current).toBe(false);
-
   });
 });

@@ -1,14 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-01-07 22:44:09
- * @LastEditTime: 2021-01-07 23:29:44
+ * @LastEditTime: 2021-01-11 22:49:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\test\useFullScreen.test.ts
  */
 import { act, renderHook } from '@testing-library/react-hooks';
-import useFullScreen from '../src/react/useFullScreen';
 import screenfull from 'screenfull';
+import useFullScreen from '../src/react/useFullScreen';
 
 describe('test useFullScreen', () => {
   it('should be defined', () => {
@@ -27,7 +27,6 @@ describe('test useFullScreen', () => {
   });
 
   it('callback', () => {
-
     const onFull = jest.fn();
     const onExitFull = jest.fn();
 
@@ -38,7 +37,7 @@ describe('test useFullScreen', () => {
 
     act(() => {
       setFull();
-    })
+    });
     expect(onFull).toBeCalled();
-  })
-})
+  });
+});
