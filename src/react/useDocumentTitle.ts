@@ -14,7 +14,7 @@ function useDocumentTitle(title: string) {
     return () => {
       document.title = 'hello world';
     };
-  }, []);
+  }, [title]);
 }
 
 export default useDocumentTitle;

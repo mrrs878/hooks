@@ -1,7 +1,7 @@
 /*
 * @Author: mrrs878@foxmail.com
 * @Date: 2020-12-31 12:47:00
- * @LastEditTime: 2021-01-04 22:20:35
+ * @LastEditTime: 2021-01-18 23:26:12
  * @LastEditors: Please set LastEditors
 * @Description: In User Settings Edit
 * @FilePath: /jsLibrary/src/react/useClickAway.ts
@@ -34,7 +34,7 @@ function useClickAway(onClickAway: (event: EventType) => void, target: BasicTarg
     return () => {
       document.removeEventListener(eventName, handler);
     };
-  }, [target, eventName]);
+  }, [eventName, target]);
 }
 
 export default useClickAway;

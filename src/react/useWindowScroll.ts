@@ -3,8 +3,8 @@ const { useEffect } = require('react');
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-08 11:16:32
- * @LastEditTime: 2020-12-09 15:08:58
- * @LastEditors: mrrs878
+ * @LastEditTime: 2021-01-18 23:26:53
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\react\hooks\useWindowScroll.js
  */
@@ -14,7 +14,7 @@ function useWindowScroll(scrollHandler: () => void) {
     return () => {
       document.removeEventListener('scroll', scrollHandler);
     };
-  }, []);
+  }, [scrollHandler]);
 }
 
 export default useWindowScroll;

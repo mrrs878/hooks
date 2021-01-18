@@ -1,8 +1,8 @@
 <!--
  * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-15 23:23:11
- * @LastEditTime: 2020-12-29 22:44:32
- * @LastEditors: mrrs878@foxmail.com
+ * @LastEditTime: 2021-01-18 23:03:54
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\README.md
 -->
@@ -13,7 +13,7 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/mrrs878/jsLibrary)
 ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/mrrs878/jsLibrary/dev/rollup/master)
 
-轮子，自用js函数库
+轮子，自用js函数库，参(抄)照(袭)ahooks](https://ahooks.js.org/zh-CN)
 
 ## native
 

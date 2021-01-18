@@ -1,7 +1,7 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-07 19:14:46
- * @LastEditTime: 2020-12-08 22:19:16
+ * @LastEditTime: 2021-01-18 23:27:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\.eslintrc.js
@@ -13,9 +13,11 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'airbnb-typescript'
+    'airbnb-typescript',
+    'plugin:react-hooks/recommended'
   ],
-  plugins: ['@typescript-eslint', 'react-hooks'],
+  plugins: ['react', 'react-hooks'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
     ecmaVersion: 11
@@ -37,6 +39,7 @@ module.exports = {
     "no-bitwise": "off",
     "indent": ["error", 2],
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "off"
+    "@typescript-eslint/no-unused-vars": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.spec.ts"]}]
   },
 };

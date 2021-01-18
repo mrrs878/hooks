@@ -1,7 +1,7 @@
 /*
 * @Author: mrrs878@foxmail.com
 * @Date: 2021-01-05 22:41:58
- * @LastEditTime: 2021-01-06 18:31:53
+ * @LastEditTime: 2021-01-18 23:26:41
  * @LastEditors: Please set LastEditors
 * @Description: In User Settings Edit
 * @FilePath: \jsLibrary\src\react\useHover.ts
@@ -24,7 +24,7 @@ function useHover(target: BasicTarget, options: PropsI) {
   const onTargetMouseLeave = useCallback(() => {
     if (onLeave) onLeave();
     setState(false);
-  }, [onLeave, onEnter]);
+  }, [onLeave]);
 
   useEffect(() => {
     const targetEle = getTargetElement(target);
@@ -34,7 +34,7 @@ function useHover(target: BasicTarget, options: PropsI) {
       targetEle?.removeEventListener('mouseenter', onTargetMouseEnter);
       targetEle?.removeEventListener('mouseleave', onTargetMouseLeave);
     };
-  }, [getTargetElement, target, onTargetMouseEnter, onTargetMouseLeave]);
+  }, [target, onTargetMouseEnter, onTargetMouseLeave]);
 
   return state;
 }

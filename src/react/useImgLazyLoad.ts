@@ -1,7 +1,7 @@
 /*
 * @Author: mrrs878@foxmail.com
 * @Date: 2020-12-14 10:26:52
- * @LastEditTime: 2020-12-18 17:23:45
+ * @LastEditTime: 2021-01-18 23:25:18
  * @LastEditors: Please set LastEditors
 * @Description: In User Settings Edit
 * @FilePath: \jsLibrary\src\react\useImgLazyLoad.ts
@@ -34,7 +34,7 @@ const useImgLazyLoad = (config: ConfigI): [boolean, string, string, () => void] 
         setErrMsg(err.toString);
       };
     }
-  }, [load]);
+  }, [config.imgUrl, load]);
 
   const getImg = useCallback(() => {
     setLoad(true);
