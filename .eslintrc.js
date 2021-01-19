@@ -1,7 +1,7 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-07 19:14:46
- * @LastEditTime: 2021-01-18 23:27:44
+ * @LastEditTime: 2021-01-19 22:16:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\.eslintrc.js
@@ -40,6 +40,6 @@ module.exports = {
     "indent": ["error", 2],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.spec.ts"]}]
+    "import/no-extraneous-dependencies": ["off", {"devDependencies": ["**/*.test.ts", "**/*.spec.ts", "**/*.test.tsx", "**/*.spec.tsx"]}]
   },
 };
