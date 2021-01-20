@@ -1,13 +1,13 @@
+/*
+* @Author: mrrs878@foxmail.com
+* @Date: 2020-12-31 12:48:41
+ * @LastEditTime: 2021-01-20 23:12:44
+ * @LastEditors: Please set LastEditors
+* @Description: In User Settings Edit
+* @FilePath: /jsLibrary/src/tools/dom.ts
+*/
 import { MutableRefObject } from 'react';
 
-/*
- * @Author: mrrs878@foxmail.com
- * @Date: 2020-12-31 12:48:41
- * @LastEditTime: 2020-12-31 12:56:06
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /jsLibrary/src/tools/dom.ts
- */
 export type BasicTarget<T = HTMLElement> =
   | (() => T | null)
   | T

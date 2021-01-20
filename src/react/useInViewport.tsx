@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-18 22:49:48
- * @LastEditTime: 2021-01-19 23:13:30
+ * @LastEditTime: 2021-01-20 23:13:07
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\src\react\useInViewport.tsx
@@ -11,6 +11,10 @@ import 'intersection-observer';
 import { BasicTarget, getTargetElement } from '../tools/dom';
 
 type InViewport = boolean | undefined;
+
+interface OptionsI {
+  root?: BasicTarget;
+}
 
 function isInViewport(el: HTMLElement): InViewport {
   if (!el) {
@@ -31,7 +35,7 @@ function isInViewport(el: HTMLElement): InViewport {
   return false;
 }
 
-function useInViewport(target: BasicTarget): InViewport {
+function useInViewport(target: BasicTarget, options?: OptionsI): InViewport {
   const [inViewPort, setInViewport] = useState<InViewport>(() => {
     const el = getTargetElement(target);
     return isInViewport(el as HTMLElement);
@@ -39,22 +43,26 @@ function useInViewport(target: BasicTarget): InViewport {
 
   useEffect(() => {
     const el = getTargetElement(target);
+    const root = getTargetElement(options?.root, document.body) as HTMLElement;
     if (!el) {
       return () => {};
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        setInViewport(entry.isIntersecting);
-      });
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setInViewport(entry.isIntersecting);
+        });
+      },
+      { root },
+    );
 
     observer.observe(el as HTMLElement);
 
     return () => {
       observer.disconnect();
     };
-  }, [target]);
+  }, [target, options]);
 
   return inViewPort;
 }
