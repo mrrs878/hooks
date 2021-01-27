@@ -1,11 +1,14 @@
 {
   "name": "@mrrs878/js-library",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/esm/index.js",
   "scripts": {
     "test": "jest --passWithNoTests",
     "build": "rollup -c"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@mrrs878"
   },
   "repository": {
     "type": "git",
