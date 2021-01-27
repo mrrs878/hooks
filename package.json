@@ -8,7 +8,7 @@
     "build": "rollup -c"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@mrrs878"
+    "registry":"https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
