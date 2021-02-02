@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-01 22:33:02
- * @LastEditTime: 2021-02-01 22:44:43
+ * @LastEditTime: 2021-02-02 23:11:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\src\react\useCookie.ts
@@ -9,8 +9,8 @@
 import Cookies from 'js-cookie';
 import { useCallback, useState } from 'react';
 
-type CookieStateT = string | undefined | null;
-type CookieOptionsT = Cookies.CookieAttributes;
+export type CookieStateT = string | undefined | null;
+export type CookieOptionsT = Cookies.CookieAttributes;
 
 interface OptionsI extends CookieOptionsT {
   defaultValue?: CookieStateT | (() => CookieStateT)
