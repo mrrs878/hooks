@@ -1,20 +1,20 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-23 17:52:01
- * @LastEditTime: 2020-12-24 10:19:36
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-03 19:32:56
+ * @LastEditors: mrrs878@foxmail.com
  * @Description: In User Settings Edit
- * @FilePath: /jsLibrary/src/react/useDrop.ts
+ * @FilePath: d:\Data\Personal\MyPro\js_library\src\react\useDrop.ts
  */
 import {
   useCallback, useMemo, useRef, useState,
 } from 'react';
 
-interface DropAreaState {
+export interface IDropAreaState {
   isHovering: boolean;
 }
 
-interface DropProps {
+export interface IDropProps {
   onDragOver: React.DragEventHandler;
   onDragenter: React.DragEventHandler;
   onDragLeave: React.DragEventHandler;
@@ -22,7 +22,7 @@ interface DropProps {
   onPaste: React.ClipboardEventHandler;
 }
 
-interface DropAreaOptions {
+export interface IDropAreaOptions {
   onFiles?: (file: Array<File>, event?: React.DragEvent) => void;
   onUri?: (url: string, event?: React.DragEvent) => void;
   onDom?: (content: any, event?: React.DragEvent) => void;
@@ -32,7 +32,7 @@ interface DropAreaOptions {
 const getProps = (
   callback: (dataTransfer: DataTransfer, event: React.DragEvent | React.ClipboardEvent) => void,
   setIsHovering: (over: boolean) => void,
-): DropProps => ({
+): IDropProps => ({
   onDragOver: (event: React.DragEvent) => event.preventDefault(),
   onDragenter: (event: React.DragEvent) => {
     event.preventDefault();
@@ -51,7 +51,7 @@ const getProps = (
   },
 });
 
-const useDrop = (options: DropAreaOptions = {}): [DropProps, DropAreaState] => {
+const useDrop = (options: IDropAreaOptions = {}): [IDropProps, IDropAreaState] => {
   const optionsRef = useRef(options);
   optionsRef.current = options;
   const [isHovering, setIsHovering] = useState(false);
@@ -90,7 +90,7 @@ const useDrop = (options: DropAreaOptions = {}): [DropProps, DropAreaState] => {
     [],
   );
 
-  const props: DropProps = useMemo(() => getProps(callback, setIsHovering), [
+  const props: IDropProps = useMemo(() => getProps(callback, setIsHovering), [
     callback,
     setIsHovering,
   ]);

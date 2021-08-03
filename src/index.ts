@@ -1,12 +1,12 @@
 /*
  * @Author: mrrs878
  * @Date: 2020-12-11 10:27:21
- * @LastEditTime: 2020-12-11 10:28:13
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-03 21:09:55
+ * @LastEditors: mrrs878@foxmail.com
  * @Description: In User Settings Edit
- * @FilePath: \jsLibrary\src\index.ts
+ * @FilePath: d:\Data\Personal\MyPro\js_library\src\index.ts
  */
-import * as native from './native';
-import * as react from './react';
+import * as vanilla from './vanilla';
+import * as reactHooks from './reactHooks';
 
-export { native, react };
+export { vanilla, reactHooks };

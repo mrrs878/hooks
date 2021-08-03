@@ -8,7 +8,7 @@
  */
 import { renderHook, act } from '@testing-library/react-hooks';
 import { sleep } from '../src/tools';
-import useDebounce from '../src/react/useDebounce';
+import useDebounce from '../src/reactHooks/useDebounce';
 
 describe('test useDebounce', () => {
   const fn = (param: number) => param + 1;

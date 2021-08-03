@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\test\aop.test.ts
  */
-import { before, after } from '../src/native/aop';
+import { before, after } from '../src/vanilla/aop';
 
 test('test aop:before', () => {
   const tom: any = {};

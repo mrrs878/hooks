@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-01-14 22:40:55
- * @LastEditTime: 2021-01-14 23:10:19
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-03 19:31:27
+ * @LastEditors: mrrs878@foxmail.com
  * @Description: In User Settings Edit
- * @FilePath: \jsLibrary\src\react\useScroll.ts
+ * @FilePath: d:\Data\Personal\MyPro\js_library\src\react\useScroll.ts
  */
 
 import { useEffect, useRef, useState } from 'react';
@@ -15,8 +15,8 @@ type Position = {
   top: number;
 };
 
- type Target = BasicTarget<HTMLElement | Document>;
- type ScrollListenerController = (val: Position) => boolean;
+type Target = BasicTarget<HTMLElement | Document>;
+type ScrollListenerController = (val: Position) => boolean;
 
 function useScroll(target?: Target, cb: ScrollListenerController = () => true): Position {
   const [position, setPosition] = useState<Position>({ left: NaN, top: NaN });

@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\test\useScroll.test.ts
  */
-import useScroll from '../src/react/useScroll';
+import useScroll from '../src/reactHooks/useScroll';
 
 describe('test useScroll', () => {
   it('should be defined', () => {

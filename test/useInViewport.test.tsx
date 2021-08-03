@@ -7,7 +7,7 @@
  * @FilePath: \jsLibrary\test\useInViewport.tsx
  */
 import { renderHook } from '@testing-library/react-hooks';
-import useInViewport from '../src/react/useInViewport';
+import useInViewport from '../src/reactHooks/useInViewport';
 
 describe('test useInViewport', () => {
   it('should be defined', () => {

@@ -8,7 +8,7 @@
  */
 import { act, renderHook } from '@testing-library/react-hooks';
 import screenfull from 'screenfull';
-import useFullScreen from '../src/react/useFullScreen';
+import useFullScreen from '../src/reactHooks/useFullScreen';
 
 describe('test useFullScreen', () => {
   it('should be defined', () => {

@@ -8,7 +8,7 @@
  */
 import { act, renderHook } from '@testing-library/react-hooks';
 import { fireEvent } from '@testing-library/react';
-import useHover from '../src/react/useHover';
+import useHover from '../src/reactHooks/useHover';
 
 describe('test usHover', () => {
   it('should be defined', () => {

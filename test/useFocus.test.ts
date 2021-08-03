@@ -8,7 +8,7 @@
  */
 import { act, renderHook } from '@testing-library/react-hooks';
 import { fireEvent } from '@testing-library/react';
-import useFocus from '../src/react/useFocus';
+import useFocus from '../src/reactHooks/useFocus';
 
 describe('test useFocus', () => {
   it('should be defined', () => {

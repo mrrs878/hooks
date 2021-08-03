@@ -1,20 +1,20 @@
 /*
 * @Author: mrrs878@foxmail.com
 * @Date: 2020-12-14 10:26:52
- * @LastEditTime: 2021-01-18 23:25:18
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-03 19:32:23
+ * @LastEditors: mrrs878@foxmail.com
 * @Description: In User Settings Edit
-* @FilePath: \jsLibrary\src\react\useImgLazyLoad.ts
+ * @FilePath: d:\Data\Personal\MyPro\js_library\src\react\useImgLazyLoad.ts
 */
 import { useCallback, useEffect, useState } from 'react';
 
-interface ConfigI {
+export interface IUseImgLazyLoadConfig {
   imgUrl: string;
   autoLoad?: false;
   backupImgUrl?: string;
 }
 
-const useImgLazyLoad = (config: ConfigI): [boolean, string, string, () => void] => {
+const useImgLazyLoad = (config: IUseImgLazyLoadConfig): [boolean, string, string, () => void] => {
   const [load, setLoad] = useState(() => config.autoLoad || true);
   const [loading, setLoading] = useState(() => true);
   const [errMsg, setErrMsg] = useState(() => '');

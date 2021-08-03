@@ -1,12 +1,12 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-09 23:13:12
- * @LastEditTime: 2021-01-21 23:06:50
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-03 19:47:15
+ * @LastEditors: mrrs878@foxmail.com
  * @Description: In User Settings Edit
- * @FilePath: \jsLibrary\test\publishSubscribe.test.ts
+ * @FilePath: d:\Data\Personal\MyPro\js_library\test\publishSubscribe.test.ts
  */
-import PublishSubscribe from '../src/native/PublishSubscribe';
+import PublishSubscribe from '../src/vanilla/PublishSubscribe';
 
 describe('test publishSubscribe', () => {
   it('should be defined', () => {

@@ -7,7 +7,7 @@
  * @FilePath: \jsLibrary\test\useCookie.test.ts
  */
 import { act, renderHook } from '@testing-library/react-hooks';
-import useCookie, { CookieOptionsT } from '../src/react/useCookie';
+import useCookie, { CookieOptionsT } from '../src/reactHooks/useCookie';
 
 describe('test useCookie', () => {
   it('should be defined', () => {

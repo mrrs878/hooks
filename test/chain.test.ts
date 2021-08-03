@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: \jsLibrary\test\Chain.test.ts
  */
-import Chain, { NEXT_SUCCESSOR } from '../src/native/Chain';
+import Chain, { NEXT_SUCCESSOR } from '../src/vanilla/Chain';
 
 interface UserInfoI {
   name: string;

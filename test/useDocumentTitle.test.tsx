@@ -8,7 +8,7 @@
 */
 import { render } from '@testing-library/react';
 import React from 'react';
-import useDocumentTitle from '../src/react/useDocumentTitle';
+import useDocumentTitle from '../src/reactHooks/useDocumentTitle';
 
 describe('test useDocumentTitle', () => {
   it('should be defined', () => {

@@ -8,7 +8,7 @@
  */
 import { renderHook } from '@testing-library/react-hooks';
 import { fireEvent } from '@testing-library/react';
-import useClickAway from '../src/react/useClickAway';
+import useClickAway from '../src/reactHooks/useClickAway';
 
 describe('test useClickAway', () => {
   it('should be defined', () => {

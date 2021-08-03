@@ -1,19 +1,19 @@
 /*
 * @Author: your name
 * @Date: 2021-01-09 22:35:24
- * @LastEditTime: 2021-01-09 22:42:40
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-03 19:33:24
+ * @LastEditors: mrrs878@foxmail.com
 * @Description: In User Settings Edit
-* @FilePath: \jsLibrary\src\react\useFocus.ts
+ * @FilePath: d:\Data\Personal\MyPro\js_library\src\react\useFocus.ts
 */
 import { useCallback, useEffect, useState } from 'react';
 import { BasicTarget, getTargetElement } from '../tools/dom';
 
-interface OptionsI {
+export interface IUseFocusOptions {
   onFocus?: () => void;
   onBlur?: () => void;
 }
-const useFocus = (target: BasicTarget, options: OptionsI) => {
+const useFocus = (target: BasicTarget, options: IUseFocusOptions) => {
   const { onFocus, onBlur } = options || {};
   const [state, setState] = useState(false);
 

@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import useRequest from '../src/react/useRequest';
+import useRequest from '../src/reactHooks/useRequest';
 
 interface UserInfoI {
   name: string;

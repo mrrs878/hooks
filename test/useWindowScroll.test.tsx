@@ -1,14 +1,14 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-08 11:18:31
- * @LastEditTime: 2020-12-10 11:13:57
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-03 19:45:56
+ * @LastEditors: mrrs878@foxmail.com
  * @Description: In User Settings Edit
- * @FilePath: \jsLibrary\test\useWindowScroll.test.js
+ * @FilePath: d:\Data\Personal\MyPro\js_library\test\useWindowScroll.test.tsx
  */
 import React, { useState } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import useWindowScroll from '../src/react/useWindowScroll';
+import useWindowScroll from '../src/reactHooks/useWindowScroll';
 
 test('test useWindowScroll', () => {
   const App = () => {

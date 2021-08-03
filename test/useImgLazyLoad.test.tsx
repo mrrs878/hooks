@@ -9,7 +9,7 @@
 import React from 'react';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
-import useImgLazyLoad from '../src/react/useImgLazyLoad';
+import useImgLazyLoad from '../src/reactHooks/useImgLazyLoad';
 
 test('test useImgLazyLoad', async () => {
   const { result, waitForNextUpdate } = renderHook(

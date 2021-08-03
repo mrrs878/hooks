@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import useInputValue from '../src/react/useInputValue';
+import useInputValue from '../src/reactHooks/useInputValue';
 
 test('test useInputValue', () => {
   const App = () => {
