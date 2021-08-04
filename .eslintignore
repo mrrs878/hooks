@@ -2,3 +2,5 @@
 babel.config.js
 webpack.config.js
 rollup.config.js
+commitlint.config.js
+dist
