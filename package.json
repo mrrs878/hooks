@@ -1,6 +1,6 @@
 {
   "name": "@mrrs878/js-library",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "main": "dist/esm/index.js",
   "scripts": {
