@@ -42,5 +42,6 @@ setupTests.js
 tsconfig.json
 webpack.config.js
 rollup.config.js
+commitlint.config.js
 
 /test

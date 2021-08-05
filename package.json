@@ -1,8 +1,9 @@
 {
   "name": "@mrrs878/js-library",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "",
   "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "scripts": {
     "test": "jest --passWithNoTests",
     "build": "rollup -c",
