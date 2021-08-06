@@ -1,6 +1,6 @@
 {
   "name": "@mrrs878/js-library",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -70,5 +70,8 @@
     "screenfull": "^5.1.0",
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "react-fast-compare": "^3.2.0"
   }
 }
