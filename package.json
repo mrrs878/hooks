@@ -1,9 +1,9 @@
 {
   "name": "@mrrs878/js-library",
-  "version": "0.0.11",
+  "version": "0.0.14",
   "description": "",
-  "main": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --passWithNoTests",
     "build": "rollup -c",
@@ -11,7 +11,8 @@
     "prepare": "husky install"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "repository": {
     "type": "git",

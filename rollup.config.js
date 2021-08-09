@@ -1,7 +1,7 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2020-12-10 19:11:10
- * @LastEditTime: 2021-08-05 09:58:33
+ * @LastEditTime: 2021-08-09 19:26:00
  * @LastEditors: mrrs878@foxmail.com
  * @Description: In User Settings Edit
  * @FilePath: d:\Data\Personal\MyPro\js_library\rollup.config.js
@@ -19,7 +19,7 @@ export default [
   {
     input: './src/index.ts',
     output: {
-      dir: 'dist/esm',
+      dir: 'dist',
       format: 'esm',
     },
     plugins: [
@@ -27,28 +27,6 @@ export default [
       resolve({ extensions, rootDir: './src' }),
       commonjs(),
       ts({ tsconfig }),
-    ],
-    external: ['react']
-  },
-  {
-    input: './src/index.ts',
-    output: {
-      dir: 'dist/umd',
-      format: 'umd',
-      name: 'MJSLibrary',
-      globals: {
-        react: 'React'
-      }
-    },
-    plugins: [
-      resolve({ 
-        extensions
-      }),
-      commonjs(),
-      ts({ 
-        tsconfigOverride: { compilerOptions: { declaration: false } }, 
-        tsconfig
-      }),
     ],
     external: ['react']
   }
